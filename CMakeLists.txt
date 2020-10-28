@@ -1297,6 +1297,11 @@ if(WITH_BENCHMARK_TOOLS)
   target_link_libraries(memtablerep_bench
     ${ROCKSDB_LIB} ${GFLAGS_LIB})
 
+  add_executable(inlineskiplist_bench
+    memtable/inlineskiplist_bench.cc)
+  target_link_libraries(inlineskiplist_bench
+    ${ROCKSDB_LIB} ${GFLAGS_LIB})
+
   add_executable(range_del_aggregator_bench
     db/range_del_aggregator_bench.cc)
   target_link_libraries(range_del_aggregator_bench

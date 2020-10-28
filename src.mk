@@ -346,6 +346,7 @@ BENCH_MAIN_SOURCES =                                                    \
   cache/cache_bench.cc                                                  \
   db/range_del_aggregator_bench.cc                                      \
   memtable/memtablerep_bench.cc                                         \
+	memtable/inlineskiplist_bench.cc																			\
   table/table_reader_bench.cc                                           \
   tools/db_bench.cc                                                     \
   util/filter_bench.cc                                                  \

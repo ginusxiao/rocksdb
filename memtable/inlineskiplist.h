@@ -144,6 +144,10 @@ class InlineSkipList {
   // Validate correctness of the skip-list.
   void TEST_Validate() const;
 
+  inline Allocator* GetAllocator() {
+    return allocator_;
+  }
+
   // Iteration over the contents of a skip list
   class Iterator {
    public:
@@ -431,8 +435,11 @@ int InlineSkipList<Comparator>::RandomHeight() {
 
   // Increase height with probability 1 in kBranching
   int height = 1;
-  while (height < kMaxHeight_ && height < kMaxPossibleHeight &&
-         rnd->Next() < kScaledInverseBranching_) {
+  //FIXME: use hard code to avoid unexpected error which may cause the final height equals to 1 forever
+  //while (height < kMaxHeight_ && height < kMaxPossibleHeight &&
+  //       rnd->Next() < kScaledInverseBranching_) {
+  while (height < 12 && height < 32 &&
+         rnd->Next() < 536870912) {
     height++;
   }
   assert(height > 0);
